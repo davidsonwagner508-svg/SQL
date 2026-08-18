@@ -28,7 +28,7 @@ BEGIN
     VALUES ('produtos', 'INSERT', CONCAT('Produto cadastrado: ', NEW.nome, 'Preço: ', NEW.preco)); 
 END;
 
--- b) Log do cadastro de clientes
+-- b
 CREATE TRIGGER insert_clientes 
 AFTER INSERT ON clientes 
 FOR EACH ROW
@@ -37,7 +37,7 @@ BEGIN
     VALUES ('clientes', 'INSERT', CONCAT('Cliente cadastrado: ', NEW.nome, ' | Email: ', NEW.email));
 END;
 
--- c) Log da exclusão de produtos
+-- c
 CREATE TRIGGER delete_produtos
 BEFORE DELETE ON produtos
 FOR EACH ROW
@@ -46,7 +46,7 @@ BEGIN
     VALUES ('produtos', 'DELETE', CONCAT('Produto excluído: ', OLD.nome, ' | Preço: R$ ', OLD.preco));
 END;
 
--- d) Log da exclusão de clientes
+-- d
 CREATE TRIGGER delete_clientes
 BEFORE DELETE ON clientes
 FOR EACH ROW
